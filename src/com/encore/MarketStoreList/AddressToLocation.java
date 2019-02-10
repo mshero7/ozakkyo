@@ -36,6 +36,7 @@ public class AddressToLocation {
 		while ((line = rd.readLine()) != null) {
 			sb.append(line);
 		}
+		
 		rd.close();
 		conn.disconnect();
 		

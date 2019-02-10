@@ -17,7 +17,7 @@
 	function getRoute() {
 		var start = $("#start").val();
 		var arrive = $("#arrive").val();
-
+		
 		$.ajax({
 			method : 'POST',
 			url : "geo.go?start=" + start + "&arrive=" + arrive,

@@ -22,7 +22,7 @@ public class StoreList {
 
 		String surl = "https://www.mangoplate.com/search/" + area + "%20" + menu;
 		Document doc = Jsoup.connect(surl).get();
-
+		
 		Elements stores = doc.select(".list-restaurants .list-restaurant-item>.restaurant-item");
 
 		// store 페이지수
@@ -76,9 +76,9 @@ public class StoreList {
 				}
 			}
 			location = addresstolocation.MakeLocation(addr);
-			distance = measurment.distance(location[0], location[1], 127.0, 37.0, "meter");
+			distance = measurment.distance(location[0], location[1], 126.95866266369002, 37.56708018464179, "meter");
 			// 거리조절
-			if (distance <= 33000.0) {
+			if (distance <= 500.0) {
 				StoreInfoDTO storeinfo = new StoreInfoDTO(img, category, name, link, addr, tel, price, openinghours,
 						distance);
 				System.out.println(storeinfo.toString());
@@ -91,7 +91,7 @@ public class StoreList {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 		Menulist menulist = new Menulist();
-		String area = "서초";
+		String area = "서대문구";
 		Object[] object = { "fall", false, false, "" };
 		ArrayList<String> list = menulist.menulist(object);
 		for (String menu : list) {

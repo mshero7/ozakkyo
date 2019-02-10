@@ -43,9 +43,6 @@ public class LocationToAddress {
 		obj = (JSONObject) getObject(obj, path);
 		Object addr = obj.getJSONObject("address").get("address_name");
 		System.out.println("address = " + addr);
-		
-		
-		
 	}
 
 	public static Object getObject(JSONObject obj, Object[] path) {
